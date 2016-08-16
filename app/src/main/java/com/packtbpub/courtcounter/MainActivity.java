@@ -8,7 +8,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    int scoreA =0, scoreB = 0;
+    int scoreA =0;
+    int scoreB = 0;
    // TextView showScoreA;
     Button addOneA, addTwoA, addThreeA,addOneB, addTwoB, addThreeB;
 
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         addOneA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //  TextView showScoreA = (TextView)findViewById(R.id.AscoreText);
                 scoreA = scoreA +1;
                 showScoreA(scoreA);
             }
@@ -74,10 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 showScoreB(scoreB);
             }
         });
-        //TextView showScoreA = (TextView)findViewById(R.id.scoreText);
-       // showScoreA.setText(score);
     }
-
 
     public void showScoreA(int scor)
     {
@@ -101,40 +98,4 @@ public class MainActivity extends AppCompatActivity {
         showScoreA(scoreA);
         showScoreB(scoreB);
     }
-
-    /*
-    add 1 in score if click on free hit button
-
-    private void addOnePtA()
-    {
-        TextView showScoreA = (TextView)findViewById(R.id.AscoreText);
-        //Button addOne = (Button)findViewById(R.id.AonePt);
-        score = score+1;
-        showScoreA.setText(score);
-    }
-
-    /*
-    add 2 in score if click on +2 button
-
-
-    private void addTwoPtA()
-    {
-        TextView showScoreA = (TextView)findViewById(R.id.AscoreText);
-        //Button addOne = (Button)findViewById(R.id.AonePt);
-        score = score+2;
-        showScoreA.setText(score);
-    }
-
-    /*
-    add 3 in score if click on +2 button
-
-
-    private void addThreePtA(View view)
-    {
-        TextView showScoreA = (TextView)findViewById(R.id.AscoreText);
-        //Button addOne = (Button)findViewById(R.id.AonePt);
-        score = score+3;
-        showScoreA.setText(score);
-    }*/
-
 }

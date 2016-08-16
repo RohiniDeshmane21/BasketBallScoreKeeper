@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="team">#616161</color>
+    <color name="score">#000000</color>
+    <color name="buttonBackground">#FF9800</color>
 </resources>
