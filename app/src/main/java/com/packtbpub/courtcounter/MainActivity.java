@@ -13,11 +13,23 @@ public class MainActivity extends AppCompatActivity {
    // TextView showScoreA;
     Button addOneA, addTwoA, addThreeA,addOneB, addTwoB, addThreeB;
 
+    private final static String BUNDLE_KEY_A
+            = " com.example.android.courtcounter.team_a";
+    private final static String BUNDLE_KEY_B
+            = " com.example.android.courtcounter.team_b";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (savedInstanceState != null && savedInstanceState.containsKey(BUNDLE_KEY_A)
+                && savedInstanceState.containsKey(BUNDLE_KEY_B)) {
+            scoreA = savedInstanceState.getInt(BUNDLE_KEY_A);
+            scoreB = savedInstanceState.getInt(BUNDLE_KEY_B);
+        }
+        showScoreA(scoreA);
+        showScoreB(scoreB);
 
         addOneA = (Button)findViewById(R.id.AonePt);
         addTwoA = (Button)findViewById(R.id.AtwoPt);
@@ -74,6 +86,13 @@ public class MainActivity extends AppCompatActivity {
                 showScoreB(scoreB);
             }
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        bundle.putInt(BUNDLE_KEY_A, scoreA);
+        bundle.putInt(BUNDLE_KEY_B, scoreB);
     }
 
     public void showScoreA(int scor)
